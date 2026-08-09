@@ -5,6 +5,7 @@ Proyecto integrador de **BCD5105 Modelado matemático**, II Cuatrimestre 2026, L
 **Integrantes:** Diego Díaz, Bairon Horna, Ignacio Marín, Jordan López, Aaron Medrano y Emilio de Gomez.  
 **Profesor:** Jordy Alfaro Brenes.  
 **Semilla reproducible:** `default_rng(2026)`.
+**Repositorio público:** https://github.com/EmiliodeGomez/redes-neuronales-grafos-mnist
 
 ## Problema
 

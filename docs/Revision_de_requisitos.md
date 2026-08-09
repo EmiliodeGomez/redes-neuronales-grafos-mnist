@@ -1,6 +1,6 @@
 # Revisión de requisitos de la entrega final
 
-Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_Final_Proyecto_Modelado (1).pdf` y `Presentación_Final_Proyecto_Modelado.pdf`.
+Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_Final_Proyecto_Modelado (2).pdf` y `Presentación_Final_Proyecto_Modelado.pdf`.
 
 ## Informe final
 
@@ -19,7 +19,7 @@ Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_
 | Conclusiones y recomendaciones | Cumple | Vinculadas con objetivos y resultados |
 | Al menos diez referencias APA 7 citadas | Cumple | Bibliografía y citas dentro del texto |
 | Declaración de uso de IA | Cumple | Nota incluida en el informe |
-| Repositorio público reproducible | Pendiente externo | El proyecto local es reproducible, pero falta publicar el enlace real de GitHub |
+| Repositorio público reproducible | En publicación | El repositorio público está creado y el proyecto local está listo para sincronizarse |
 
 ## Presentación
 
@@ -35,6 +35,5 @@ Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_
 
 ## Datos que aún deben confirmarse antes de entregar
 
-1. Sustituir `https://github.com/USUARIO/redes-neuronales-grafos-mnist` por el enlace público definitivo.
-2. Agregar el número de grupo si el profesor exige que aparezca explícitamente.
-3. Confirmar con el profesor la aceptación de seis integrantes, porque la guía indica equipos de tres a cuatro personas.
+1. Agregar el número de grupo al nombre del archivo: `EntregaFinal_Grupo#_RedesNeuronalesGrafos.pdf`.
+2. Confirmar con el profesor la aceptación de seis integrantes, porque la guía indica equipos de tres a cuatro personas y señala que deben ser los mismos del Avance 1.

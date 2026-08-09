@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FIG = ROOT / "figuras"
 RESULTS = json.loads((ROOT / "data" / "processed" / "resultados.json").read_text(encoding="utf-8"))
 OUT = Path(os.environ.get("GNN_REPORT_OUT", Path(os.environ["TEMP"]) / "EntregaFinal_Grupo_RedesNeuronalesGrafos.pdf"))
-REPO_URL = os.environ.get("GNN_REPO_URL", "https://github.com/USUARIO/redes-neuronales-grafos-mnist")
+REPO_URL = os.environ.get("GNN_REPO_URL", "https://github.com/EmiliodeGomez/redes-neuronales-grafos-mnist")
 
 FONT_DIR = Path(r"C:\Windows\Fonts")
 pdfmetrics.registerFont(TTFont("Arial", str(FONT_DIR / "arial.ttf")))
