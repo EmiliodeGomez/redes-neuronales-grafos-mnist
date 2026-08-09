@@ -2,7 +2,7 @@
 
 Proyecto integrador de **BCD5105 Modelado matemático**, II Cuatrimestre 2026, Lead University.
 
-**Integrantes:** Diego Díaz, Bairon Horna, Ignacio Marín, Jordan López y Aaron Medrano.  
+**Integrantes:** Diego Díaz, Bairon Horna, Ignacio Marín, Jordan López, Aaron Medrano y Emilio de Gomez.  
 **Profesor:** Jordy Alfaro Brenes.  
 **Semilla reproducible:** `default_rng(2026)`.
 
@@ -79,4 +79,3 @@ MNIST es un conjunto histórico, centrado y limpio; no representa documentos cos
 ## Licencia
 
 El código y los documentos propios se publican bajo licencia MIT. La licencia no modifica los términos del conjunto MNIST.
-

@@ -123,8 +123,8 @@ def main():
     c.setFont("Arial-Bold", 11); c.setFillColor(colors.white)
     c.drawString(2*cm, y, "Integrantes")
     c.setFont("Arial", 10.5)
-    for i, name in enumerate(["Diego Díaz", "Bairon Horna", "Ignacio Marín", "Jordan López", "Aaron Medrano"]):
-        c.drawString(2*cm, y-(i+1)*.55*cm, name)
+    for i, name in enumerate(["Diego Díaz", "Bairon Horna", "Ignacio Marín", "Jordan López", "Aaron Medrano", "Emilio de Gomez"]):
+        c.drawString(2*cm, y-(i+1)*.50*cm, name)
     c.setFont("Arial-Bold", 11); c.drawString(11.2*cm, y, "Curso")
     c.setFont("Arial", 10.5)
     c.drawString(11.2*cm, y-.55*cm, "BCD5105 Modelado matemático")
