@@ -19,7 +19,7 @@ Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_
 | Conclusiones y recomendaciones | Cumple | Vinculadas con objetivos y resultados |
 | Al menos diez referencias APA 7 citadas | Cumple | Bibliografía y citas dentro del texto |
 | Declaración de uso de IA | Cumple | Nota incluida en el informe |
-| Repositorio público reproducible | En publicación | El repositorio público está creado y el proyecto local está listo para sincronizarse |
+| Repositorio público reproducible | Cumple | Repositorio público con README, LICENSE, datos, notebooks ejecutados, código, figuras e informe |
 
 ## Presentación
 
