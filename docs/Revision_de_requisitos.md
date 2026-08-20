@@ -1,6 +1,6 @@
 # Revisión de requisitos de la entrega final
 
-Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_Final_Proyecto_Modelado (2).pdf` y `Presentación_Final_Proyecto_Modelado.pdf`.
+Revisión realizada el 19 de agosto de 2026 contra las instrucciones del informe y la presentación final.
 
 ## Informe final
 
@@ -10,7 +10,7 @@ Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_
 | Portada con tema, curso, fecha e integrantes | Cumple | Incluye a los seis integrantes, incluido Emilio de Gomez |
 | Mejoras respecto al Avance 1 | Cumple | Sección explícita de mejoras |
 | Marco matemático riguroso | Cumple | Formulación de Softmax, propagación en grafo y Graph-MLP |
-| Datos, fuente, tamaño, variables y procesamiento | Cumple | Fuente MNIST, tabla de variables y flujo de preparación |
+| Datos, fuente, tamaño, variables y procesamiento | Cumple con límite explícito | MNIST es benchmark; Archivo Nacional y NTN-003 sustentan el contexto, sin fingir validación local |
 | Al menos tres visualizaciones numeradas e interpretadas | Cumple | Figuras y tablas numeradas con interpretación |
 | Al menos dos modelos comparables | Cumple | Softmax y Graph-MLP con la misma partición y métricas |
 | Validación y comparación | Cumple | Validación cruzada estratificada de tres pliegues |
@@ -20,6 +20,7 @@ Revisión realizada el 9 de agosto de 2026 contra las instrucciones de `Entrega_
 | Al menos diez referencias APA 7 citadas | Cumple | Bibliografía y citas dentro del texto |
 | Declaración de uso de IA | Cumple | Nota incluida en el informe |
 | Repositorio público reproducible | Cumple | Repositorio público con README, LICENSE, datos, notebooks ejecutados, código, figuras e informe |
+| Coherencia del caso | Cumple | Todo el documento presenta el clasificador como componente OCR para protocolos, formularios y expedientes públicos |
 
 ## Presentación
 

@@ -109,15 +109,15 @@ def add_page(c, page_no, section, title, story, callout=None):
 
 def main():
     c = canvas.Canvas(str(OUT), pagesize=A4)
-    c.setTitle("Entrega final - Redes neuronales sobre grafos para MNIST")
+    c.setTitle("Entrega final - Prototipo OCR para archivos públicos")
     # 1. Portada
     c.setFillColor(NAVY); c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
     c.setFillColor(TEAL); c.rect(0, PAGE_H-1.1*cm, PAGE_W, 1.1*cm, fill=1, stroke=0)
     c.setFont("Arial-Bold", 30); c.setFillColor(colors.white)
-    c.drawString(2.0*cm, PAGE_H-5.0*cm, "Redes neuronales sobre grafos")
-    c.setFont("Arial-Bold", 22); c.drawString(2.0*cm, PAGE_H-6.25*cm, "para clasificar dígitos manuscritos")
+    c.drawString(2.0*cm, PAGE_H-5.0*cm, "Digitalización inteligente")
+    c.setFont("Arial-Bold", 22); c.drawString(2.0*cm, PAGE_H-6.25*cm, "de archivos públicos en papel")
     c.setFont("Arial", 13); c.setFillColor(colors.HexColor("#CFEAF0"))
-    c.drawString(2.0*cm, PAGE_H-7.25*cm, "Comparación entre Softmax y Graph-MLP sobre MNIST")
+    c.drawString(2.0*cm, PAGE_H-7.25*cm, "Prototipo OCR de dígitos con Softmax y Graph-MLP")
     c.setStrokeColor(TEAL); c.setLineWidth(5); c.line(2*cm, PAGE_H-8.0*cm, 15.7*cm, PAGE_H-8.0*cm)
     y = PAGE_H-11.0*cm
     c.setFont("Arial-Bold", 11); c.setFillColor(colors.white)
@@ -132,32 +132,32 @@ def main():
     c.drawString(11.2*cm, y-1.65*cm, "Lead University")
     c.drawString(11.2*cm, y-2.2*cm, "19 de agosto de 2026")
     c.setFillColor(colors.HexColor("#CFEAF0")); c.setFont("Arial", 8.5)
-    c.drawString(2*cm, 2.3*cm, "Carril temático: grafos y aprendizaje automático")
+    c.drawString(2*cm, 2.3*cm, "Caso: migración de protocolos, formularios y expedientes físicos")
     c.drawString(2*cm, 1.75*cm, f"Repositorio: {REPO_URL}")
     c.showPage()
 
     # 2. Resumen y mejoras
     improvements = [
         ["Hallazgo en Avance 1", "Corrección incorporada"],
-        ["Título de grafos, pero resumen sobre finanzas", "Problema, datos, modelos y conclusiones ahora se concentran en MNIST como grafo de píxeles."],
+        ["Título de grafos, pero resumen sobre finanzas", "Problema, modelos y conclusiones se alinean con un componente OCR para archivos públicos."],
         ["Graph-RNN quedaba cerca del azar", "Se corrigió la contracción einsum: la versión anterior tomaba la diagonal nula de A. Se usa agregación D^-1 A H verificable."],
         ["Comparación informal de modelos", "Dos modelos, mismos pliegues y prueba; cinco métricas y tabla cuantitativa."],
         ["Sin sensibilidad ni ética específica", "Se mueven L2, pasos de propagación y tamaño; se documentan licencia, sesgo, privacidad y uso indebido."],
         ["Notebook aislado", "Repositorio con README, licencia, datos, tres notebooks, funciones y resultados persistidos."],
     ]
     add_page(c, 2, "Resumen", "Resumen ejecutivo y mejoras respecto al Avance 1", [
-        P("<b>Resumen.</b> Este estudio evalúa si la estructura espacial de una imagen puede incorporarse explícitamente a un clasificador de dígitos. Cada imagen MNIST se representa como un grafo de 784 nodos, con aristas entre los ocho píxeles vecinos. Se comparan una regresión Softmax lineal y Graph-MLP, que aplica dos pasos de propagación fija y un clasificador neuronal no lineal. La validación cruzada estratificada de tres pliegues produjo F1 macro de 89.02% ± 0.22 para Softmax y 91.32% ± 0.39 para Graph-MLP. En la prueba oficial de 10,000 imágenes, los F1 fueron 92.19% y 95.51%. La sensibilidad indica estabilidad frente a regularización, sobre-suavizado con demasiados pasos y dependencia del tamaño muestral. Se recomienda validar con escritura costarricense antes de cualquier uso real."),
-        P("<b>Palabras clave:</b> redes neuronales sobre grafos, MNIST, propagación de mensajes, clasificación multiclase, sensibilidad, reproducibilidad."),
+        P("<b>Resumen.</b> El Archivo Nacional de Costa Rica custodia miles de metros de documentos y mantiene servicios de protocolos digitalizados; además, la norma nacional de digitalización exige incorporar reconocimiento óptico de caracteres [14–15]. Este estudio desarrolla un componente experimental para reconocer dígitos que podrían aparecer en fechas, folios, montos e identificadores de protocolos, formularios y expedientes físicos. MNIST se usa únicamente como banco de prueba reproducible, no como muestra de documentos costarricenses. Cada imagen se representa como un grafo de 784 píxeles y se comparan Softmax y Graph-MLP. En la prueba oficial, los F1 macro fueron 92.19% y 95.51%. El resultado justifica un piloto controlado, pero no automatizar la migración sin datos locales, OCR completo y revisión humana."),
+        P("<b>Palabras clave:</b> digitalización documental, archivos públicos, OCR, redes neuronales sobre grafos, MNIST, reproducibilidad."),
         Spacer(1, 4), table(improvements, [5.3*cm, 11.3*cm], font_size=7.3),
-    ], "La corrección del flujo de mensajes convierte un prototipo no funcional en una comparación reproducible y honesta." )
+    ], "El modelo reconoce dígitos en un banco de prueba; la decisión real es cómo validar el componente dentro de un flujo archivístico seguro." )
 
     # 3. Introducción y objetivos
     add_page(c, 3, "Introducción", "1. Problema, relevancia y objetivos", [
-        P("La digitalización de formularios, archivos educativos, solicitudes y registros escritos puede reducir transcripción manual, pero exige reconocer trazos variables con errores controlados. En Costa Rica, un clasificador de caracteres podría apoyar tareas administrativas en instituciones públicas, centros educativos y entidades financieras; sin embargo, MNIST es únicamente una prueba de concepto internacional y no evidencia desempeño sobre escritura local."),
+        P("Municipalidades, ministerios y archivos públicos conservan protocolos, formularios y expedientes en papel que deben describirse, consultarse y preservarse. El Archivo Nacional reporta 34,965 protocolos digitalizados y 20,690 metros lineales en custodia [14]. La NTN-003 establece requisitos para digitalizar documentos textuales en soporte papel y dispone incorporar OCR [15]. Reconocer dígitos puede apoyar la captura de fechas, folios, montos y códigos, pero un error también puede alterar un expediente."),
         P("Una imagen no es solo una lista de 784 intensidades: los píxeles adyacentes forman trazos. Las redes sobre grafos modelan explícitamente relaciones entre nodos [2–4]. El problema de investigación es: <i>¿un modelo que incorpora la vecindad local, combinado con una frontera no lineal, mejora la clasificación frente a un modelo lineal bajo una evaluación común?</i>"),
-        P("<b>Objetivo general.</b> Evaluar matemáticamente y de forma reproducible el efecto de incorporar propagación local sobre un grafo de píxeles en la clasificación multiclase de MNIST."),
-        P("<b>Objetivos específicos.</b> (1) describir MNIST y justificar su representación como grafo; (2) formular y ajustar dos modelos con supuestos diferentes; (3) comparar ambos con validación estratificada y métricas macro; (4) medir sensibilidad a regularización, profundidad de propagación y cantidad de datos; y (5) proponer salvaguardas para un eventual piloto costarricense."),
-        P("La contribución es pedagógica: conecta álgebra matricial, funciones de activación, optimización y teoría de grafos con un experimento que puede ejecutarse sin GPU. No se afirma que Graph-MLP sea una GNN de frontera ni que MNIST represente el contexto nacional."),
+        P("<b>Objetivo general.</b> Evaluar de forma reproducible un prototipo de reconocimiento de dígitos como componente de un futuro flujo OCR para migrar archivos públicos costarricenses desde papel."),
+        P("<b>Objetivos específicos.</b> (1) formular la imagen como grafo y documentar el alcance archivístico; (2) ajustar Softmax y Graph-MLP sobre el mismo banco de prueba; (3) comparar F1 macro y pérdida con validación estratificada; (4) medir sensibilidad a L2, propagación y tamaño; y (5) definir un piloto local con umbral de revisión, métricas y controles de gobernanza."),
+        P("La contribución es un prototipo técnico y un plan de validación. MNIST permite verificar el código sin exponer expedientes reales, pero no constituye dato costarricense ni prueba desempeño sobre sellos, celdas, escaneos degradados o escritura local."),
         P("La relevancia del análisis no depende de que el modelo más complejo gane. Depende de que la comparación se realice sobre los mismos datos, que sus supuestos sean explícitos y que una conclusión adversa también pueda reportarse. Esa trazabilidad es central para el modelado matemático responsable [11–12]."),
     ])
 
@@ -207,7 +207,7 @@ def main():
         P("<b>Procesamiento.</b> Se divide la intensidad entre 255 y se usa float32. No hay valores faltantes, imputación ni exclusiones. Para validación se selecciona una muestra estratificada de 12,000 ejemplos; para el ajuste final, 30,000, de los cuales 15% se reserva para validación. Las mismas observaciones alimentan ambos modelos."),
         P("<b>Prevención de fuga.</b> La transformación de grafo no usa etiquetas ni estadísticas del conjunto completo; depende únicamente de los vecinos de cada imagen. La semilla fija 2026 determina muestreo, pliegues e inicialización. La prueba oficial permanece cerrada hasta terminar el ajuste."),
         P("<b>Calidad.</b> Las clases están razonablemente balanceadas: la más frecuente es 1 (6,742) y la menos frecuente es 5 (5,421), razón 1.24. Esto permite interpretar exactitud, aunque F1 macro sigue siendo la métrica principal para dar el mismo peso a cada clase."),
-        P("<b>Derechos de uso.</b> MNIST deriva de bases NIST y se distribuye ampliamente para investigación. El repositorio conserva atribución y separa la licencia MIT del código de los términos del dataset. No se mezclan licencias ni se afirma propiedad sobre los datos."),
+        P("<b>Derechos de uso.</b> MNIST deriva de bases NIST y se usa como benchmark de investigación. No se descargan ni publican expedientes reales. Un piloto institucional deberá autorizar acceso, anonimización, retención y uso secundario conforme a la normativa archivística y de protección de datos."),
     ])
 
     # 7 EDA
@@ -215,7 +215,7 @@ def main():
         img("figura_1_muestras_distribucion.png", 17.1*cm, 9.6*cm),
         P("<b>Figura 1.</b> Muestras y conteo por clase. Los trazos varían aun dentro de una clase, mientras la distribución permanece suficientemente balanceada. Esto respalda métricas macro y particiones estratificadas." , CAPTION),
         Spacer(1, 6), img("figura_2_promedios_clase.png", 17.1*cm, 9.6*cm),
-        P("<b>Figura 2.</b> Imagen promedio por clase. La energía se concentra en regiones distintas y las diagonales son informativas; la vecindad de Moore es razonable. También se observa fuerte centrado, una condición que puede no cumplirse en formularios reales.", CAPTION),
+        P("<b>Figura 2.</b> Imagen promedio por clase. La vecindad de Moore captura trazos y diagonales, pero el fuerte centrado muestra la brecha frente a fechas, folios y montos extraídos de expedientes escaneados.", CAPTION),
     ])
 
     # 8 metodología
@@ -249,7 +249,7 @@ def main():
         P("<b>Figura 3.</b> Métricas sobre las mismas 10,000 imágenes. Graph-MLP supera a Softmax de forma consistente; la diferencia entre precisión y exhaustividad macro es mínima.", CAPTION),
         Spacer(1, 6), table(result_table, [3.1*cm, 3.9*cm, 3.4*cm, 3.1*cm, 3.1*cm]),
         P("La mejora absoluta de F1 es 3.31 puntos y la pérdida logarítmica cae 45.7% (0.280 a 0.152). La validación cruzada también favorece Graph-MLP en los tres pliegues, con una ventaja media de 2.30 puntos y desviaciones pequeñas."),
-        P("Se elige Graph-MLP para el prototipo porque mejora discriminación y calibración probabilística sin requerir GPU. Sin embargo, el experimento combina propagación con no linealidad; la sección de sensibilidad evita atribuir toda la ganancia al grafo."),
+        P("Se elige Graph-MLP para continuar el prototipo porque mejora discriminación y pérdida probabilística sin GPU. Esta elección solo aplica al benchmark: un piloto con archivos públicos debe volver a comparar los modelos y puede seleccionar otro."),
     ], "95.51% de F1 macro: la alternativa con propagación y frontera no lineal gana bajo una comparación común." )
 
     # 10 matrices
@@ -258,7 +258,7 @@ def main():
         P("<b>Figuras 4 y 5.</b> Matrices de confusión normalizadas. Graph-MLP reduce errores en casi todas las clases. Persisten pares con trazos semejantes: 4→9 (28 casos), 9→4 (28), 8→5 (21) y 3→5 (15).", CAPTION),
         P("La clase 5 es la más difícil para Softmax: 792/892 correctos (88.8%). Graph-MLP eleva esa cifra a 848/892 (95.1%). La clase 1 es la más fácil para ambos por su forma distintiva y baja ambigüedad."),
         P("Los errores remanentes no parecen aleatorios: se concentran en cambios locales de bucles, inclinación y cierre de trazos. Esto es coherente con la hipótesis espacial, pero también muestra que el promedio de vecinos puede borrar detalles finos."),
-        P("En un uso real no basta una etiqueta. Se recomienda conservar la probabilidad máxima, enviar a revisión humana los casos con confianza inferior a un umbral validado y permitir corrección. Las matrices deben recalcularse por fuente de captura, región, edad y dispositivo cuando esas variables estén disponibles."),
+        P("En digitalización real no basta una etiqueta. Debe conservarse la imagen del folio, la probabilidad, la corrección humana y una bitácora. Las matrices se recalculan por institución, tipo documental, escáner y estado físico; un valor dudoso nunca debe sobrescribir el original."),
         P("No se informa significancia inferencial porque la partición oficial tiene dependencia histórica de construcción y los modelos comparten ejemplos. La comparación se interpreta como evidencia empírica reproducible, no como garantía poblacional."),
     ]
     add_page(c, 10, "Resultados", "5.1. Los errores se concentran en pares visualmente cercanos", cm_story)
@@ -281,7 +281,7 @@ def main():
 
     # 12 limitaciones
     add_page(c, 12, "Limitaciones", "6.1. Qué no captura el modelo y cuándo dejaría de ser válido", [
-        P("<b>Validez externa.</b> MNIST contiene dígitos centrados, en escala de grises y fondo uniforme. Formularios costarricenses pueden incluir ruido, distintos bolígrafos, inclinación, celdas, sellos, compresión y combinaciones de caracteres. El desempeño reportado no se transfiere automáticamente."),
+        P("<b>Validez externa.</b> MNIST contiene dígitos centrados y fondo uniforme. Protocolos, actas, formularios y expedientes públicos pueden incluir papel degradado, tinta irregular, sellos, tablas, mecanografía y datos sensibles. El 95.51% reportado no se transfiere automáticamente."),
         P("<b>Atribución del efecto.</b> Softmax es lineal y Graph-MLP es no lineal además de propagar mensajes. La ablación T=0 sugiere que la no linealidad explica más mejora que el grafo fijo. Un diseño futuro debe comparar MLP crudo, MLP suavizado, CNN y GNN aprendible con capacidad semejante."),
         P("<b>Topología.</b> La vecindad Moore presupone una rejilla y pesos uniformes. En grafos irregulares, documentos segmentados o trazos vectoriales, las aristas tendrían otro significado. El modelo no aprende atención ni pesos por relación."),
         P("<b>Recursos.</b> Para asegurar ejecución sin GPU se utiliza una muestra de 30,000 y una capa oculta. Esto limita capacidad. El notebook original entrenó solo 5,000 ejemplos y además anuló mensajes por un error de índices; sus 12.6% no eran evidencia contra GNN."),
@@ -289,7 +289,7 @@ def main():
         P("<b>Condiciones de invalidez.</b> El resultado deja de ser defendible si cambia la distribución de captura, aparecen nuevas clases, hay recortes incorrectos, se usan caracteres no centrados o la tasa de error por subgrupo supera el nivel acordado. Cualquier despliegue exige prueba local, monitoreo y retirada segura."),
         table([
             ["Con más tiempo/datos", "Prueba propuesta"],
-            ["Muestra costarricense", "Recolectar y separar por institución/dispositivo"],
+            ["Muestra costarricense", "Etiquetar dígitos por institución, serie documental y escáner"],
             ["Modelos equivalentes", "MLP, CNN y GNN con parámetros comparables"],
             ["Incertidumbre", "Calibración, bootstrap e intervalo por clase"],
             ["Robustez", "Rotación, ruido, desplazamiento y escritura fuera de muestra"],
@@ -298,10 +298,10 @@ def main():
 
     # 13 ética
     add_page(c, 13, "Ética", "7. Consideraciones éticas y gobernanza de datos", [
-        P("<b>Origen y permiso.</b> El dataset se atribuye a MNIST/NIST [1,10]. El código propio se publica con licencia MIT; la licencia no se extiende a los datos. Antes de añadir formularios reales se debe registrar base legal, propósito, retención y autorización de publicación."),
+        P("<b>Origen y permiso.</b> El benchmark se atribuye a MNIST/NIST [1,10]. Antes de usar protocolos, actas o expedientes se debe registrar institución custodiante, base legal, finalidad, serie documental, plazo de conservación y autorización; digitalizar no equivale a publicar [15]."),
         P("<b>Privacidad.</b> MNIST no incluye nombres ni metadatos directos, pero la caligrafía puede convertirse en dato vinculable cuando se asocia con formularios. En un piloto se deben recortar solo dígitos necesarios, eliminar identificadores, cifrar almacenamiento, limitar accesos y fijar plazos de borrado."),
         P("<b>Sesgo y representación.</b> No hay variables demográficas ni procedencia de los escritores para auditar equidad. Pueden estar ausentes trazos de personas costarricenses, adultos mayores, niños, personas con discapacidad motora y estilos regionales. Un promedio global alto puede ocultar daño concentrado."),
-        P("<b>Uso indebido.</b> Una clasificación incorrecta en calificaciones, montos, identificadores o expedientes puede afectar derechos. El modelo no debe tomar decisiones finales. Debe sugerir una lectura, mostrar confianza, conservar imagen original y escalar casos dudosos a una persona."),
+        P("<b>Uso indebido.</b> Una lectura incorrecta de fecha, monto, cédula, finca o número de expediente puede afectar derechos. El modelo no decide ni elimina papel: sugiere una transcripción, muestra confianza, conserva el folio original y escala discrepancias."),
         P("<b>Gobernanza.</b> Siguiendo NIST AI RMF [11], se proponen cuatro funciones: gobernar (responsable, documentación y auditoría); mapear (usuarios, contexto y daños); medir (F1 por clase/subgrupo, calibración y deriva); gestionar (umbral de rechazo, revisión y retiro). Las tarjetas de modelo ayudan a comunicar uso previsto y límites [12]."),
         table([
             ["Riesgo", "Control mínimo", "Evidencia"],
@@ -315,15 +315,15 @@ def main():
 
     # 14 conclusiones
     add_page(c, 14, "Cierre", "8. Conclusiones y recomendaciones", [
-        P("<b>Conclusión 1 — representación.</b> MNIST puede expresarse como una rejilla-grafo de 784 nodos; la vecindad de Moore formaliza la continuidad de trazos. Con esto se cumple el objetivo de conectar teoría de grafos y clasificación."),
+        P("<b>Conclusión 1 — alcance.</b> La clasificación de dígitos es un componente pequeño pero medible de un flujo OCR para protocolos, formularios y expedientes. La imagen puede expresarse como una rejilla-grafo de 784 nodos."),
         P("<b>Conclusión 2 — comparación.</b> Graph-MLP obtuvo 95.51% de F1 macro frente a 92.19% de Softmax y redujo log-loss de 0.280 a 0.152. La ventaja también apareció en cada pliegue. Por tanto, se selecciona Graph-MLP como prototipo, no como solución lista para producción."),
         P("<b>Conclusión 3 — sensibilidad.</b> El resultado es estable ante L2, se degrada con demasiada propagación y depende fuertemente de la cantidad de datos. La ablación T=0 advierte que la no linealidad, más que el grafo fijo, explica buena parte de la mejora."),
-        P("<b>Conclusión 4 — uso responsable.</b> MNIST no representa escritura costarricense y carece de atributos para auditoría demográfica. El modelo debe limitarse a investigación hasta completar validación local, privacidad, revisión humana y monitoreo."),
-        P("<b>Recomendaciones prácticas.</b> (1) ejecutar un piloto con al menos 1,000–5,000 dígitos locales separados por fuente; (2) comparar MLP, CNN y GNN con capacidad equivalente; (3) fijar un umbral que envíe baja confianza a revisión; (4) medir F1, calibración y tiempo ahorrado por institución; (5) documentar versión, datos y aprobaciones; y (6) detener el sistema si la deriva o la brecha por subgrupo supera el límite definido."),
+        P("<b>Conclusión 4 — uso responsable.</b> MNIST no representa archivos costarricenses. El prototipo debe mantenerse fuera de producción hasta validarlo con una muestra local, un flujo OCR completo, controles archivísticos y revisión humana."),
+        P("<b>Recomendaciones prácticas.</b> (1) elegir una serie de bajo riesgo —por ejemplo, índices o formularios sin datos sensibles—; (2) etiquetar 1,000–5,000 recortes locales por institución y escáner; (3) comparar MLP, CNN y GNN; (4) enviar baja confianza y discrepancias a doble revisión; (5) conservar imagen, metadatos y bitácora; y (6) medir F1, calibración, tiempo ahorrado y error residual antes de ampliar el alcance."),
         P("<b>Reproducibilidad.</b> El repositorio contiene la copia de datos (<100 MB), semilla 2026, tres notebooks ejecutables en orden, funciones NumPy, resultados JSON, figuras, requisitos y licencia. No contiene rutas personales, credenciales ni dependencias ocultas."),
         P(f"<b>Repositorio público:</b> {REPO_URL}"),
-        P("La respuesta útil no es «las GNN siempre son mejores». Es más concreta: para este conjunto, una frontera no lineal con contexto local supera la referencia lineal; antes de usarla en Costa Rica, el valor marginal del grafo y la validez externa deben demostrarse con datos locales."),
-    ], "Recomendación: invertir primero en datos locales y revisión humana; después decidir si una GNN aprendible agrega valor." )
+        P("La respuesta útil no es «automatizar todo el archivo». Es más concreta: el prototipo mejora el reconocimiento de dígitos en MNIST; antes de migrar un solo expediente, la institución debe demostrar fidelidad sobre su propia serie documental y mantener trazabilidad humana."),
+    ], "Recomendación: empezar con una serie documental acotada, datos locales etiquetados y revisión humana; después decidir si el modelo agrega valor." )
 
     # 15 referencias
     refs = [
@@ -340,6 +340,8 @@ def main():
         "[11] Tabassi, E. (2023). <i>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</i> (NIST AI 100-1). National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-1",
         "[12] Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., & Gebru, T. (2019). Model cards for model reporting. <i>Proceedings of FAT*</i>, 220–229. https://doi.org/10.1145/3287560.3287596",
         "[13] Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., & Dennison, D. (2015). Hidden technical debt in machine learning systems. <i>Advances in Neural Information Processing Systems, 28</i>.",
+        "[14] Dirección General del Archivo Nacional. (2026). <i>Archivo Nacional de Costa Rica</i>. https://archivonacional.go.cr/",
+        "[15] Dirección General del Archivo Nacional. (2021). <i>NTN-003: Digitalización de documentos textuales en soporte papel</i>. https://www.archivonacional.go.cr/web/dsae/NTN-003_digitalizacio%CC%81n_textuales_papel_doc.pdf",
     ]
     add_page(c, 15, "Referencias", "Referencias y declaración de uso de IA", [
         *[P(r, REF) for r in refs],
